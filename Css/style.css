@@ -1,0 +1,186 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: "Merriweather Sans", sans-serif;
+    color: #4c6986;
+    transition:background 0.2s linear;
+}
+.title{
+    max-width: 500px;
+}
+
+.wrapper{
+  max-width: 1040px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px;  
+}
+
+body.dark{
+    background-color:#4c6986;
+    color: white;
+}
+
+.checkbox{
+    opacity: 0;
+    position: relative;
+}
+.checkbox:checked+ .label .boll{
+    transform: translateX(24px);
+}
+.label{
+    display:flex;
+   background-color: #111;
+   display: flex;
+   border-radius: 50px;
+   align-items: center;
+   height: 26px;
+   width: 50px; 
+   padding: 5px;
+   position: relative;
+}
+.toggle{
+  display: flex;
+align-items: center;
+justify-content: center;
+margin-top:10px;
+
+}
+.boll{
+    background: #fff;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s linear;
+}
+.restart{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid #4c6986;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+h1{
+    display: flex;
+    font-size: 70px;
+    font-weight:bold;
+    justify-content:left
+
+}
+
+.restart.tog{
+    background-color: #fff;
+}
+.restart:hover{
+    background:#7ea5cc ;
+    color: white;
+}
+.restart span{
+    font-family: sans-serif;
+}
+.game{
+    width:500px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.header{
+    display: flex;
+    color: #9A9A9A;
+    font-size: 24px;
+}
+
+.header .player-X{
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+.player-X.active{
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
+
+.header .player-O{
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.player-O.active{
+    color: #D7BAFB;
+    border-color: #D7BAFB;
+}
+
+
+/*here is couple of things  i have to cover later on */
+.board{
+   
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-grow: 1;
+    grid-gap: 0px;
+    padding: 10px;
+}
+.board-tile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    background: white;
+    cursor: pointer;
+}
+/* i have to learn this */
+.board-tile:not(:nth-child(3n)){
+    border-right: 3px solid rgba(137,163,189, .58);
+}
+.board-tile:not(:nth-last-child(-n+3)){
+    border-bottom: 3px solid rgba(137,163,189,.58);
+}
+.board-tile:hover{
+    background: #eee;
+
+}
+
+.tile-x{
+    color: #42BED7;
+}
+.tile-o{
+    color:#D7BAFB ;
+}
+.tile-winner span{
+    color:#23CE6B ;
+}
+
+@media only screen and (max-width:1200px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left{
+        margin-bottom: 50px;
+    }
+}
+
+#text{
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+}
